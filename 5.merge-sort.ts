@@ -1,4 +1,3 @@
-let n = 0;
 // function that sort any 2 input arrays
 // every single array must be already sorted
 function sort(arr1: number[], arr2: number[]): number[] {
@@ -6,18 +5,18 @@ function sort(arr1: number[], arr2: number[]): number[] {
   let length = arr1.length + arr2.length;
 
   for(let i = 0; i < length; i++) {
-    n++;
+
 
     // check arr length
     if(arr1.length == 0) {
       for(let j = 0; j < arr2.length; j++) {
-        n++;
+
         sortedArray.push(arr2[j]);
       }
       break;
     } else if(arr2.length == 0) {
       for(let j = 0; j < arr1.length; j++) {
-        n++;
+
         sortedArray.push(arr1[j]);
       }
       break;
@@ -39,7 +38,7 @@ function sort(arr1: number[], arr2: number[]): number[] {
 // exaple input: [1, 5, 7, 4, 2, 3, 6]
 // recursive fuction that achive merge sort
 function mergeSort(arr: number[]): number[] {
-  n++;
+
   // check base level
   if(arr.length == 1) {
     return arr;
@@ -54,4 +53,3 @@ function mergeSort(arr: number[]): number[] {
 
 let sortedArray = mergeSort([1, 5, 7, 4, 2, 3, 6]);
 console.log(sortedArray);
-console.log(n);
