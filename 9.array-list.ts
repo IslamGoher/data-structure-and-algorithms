@@ -61,9 +61,11 @@ class ArrayList  {
     
     // shift the element to the end of the array list
     for(let i = index; i < this.l - 1; i++) {
-      swap = arraylist[i];
-      arraylist[i] = arraylist[i+1];
-      arraylist[i+1] = swap;
+      swap = this[i];
+      this[i] = this[i+1];
+      this[i+1] = swap;
+      // there's another option better than swapping
+      // this[i] = this[i+1]
       newIndex++;
     }
 
