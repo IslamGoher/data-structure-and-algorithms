@@ -79,6 +79,27 @@ class BST {
     return this.breadthFirstTraversal(queue, array);
   }
   */
+
+  // my solution
+  breadthFirstTraversal(): number[] {
+
+    let finalArray: number[] = [];
+    let queue: BSTNode[] = [this.root!];
+
+    // iterative
+    while(queue.length) {
+
+      // dequeue value to final array
+      let temp = queue.shift()!;
+      finalArray.push(temp.value);
+
+      // queue children of the last dequeued node
+      if(temp.left) queue.push(temp.left);
+      if(temp.right) queue.push(temp.right);
+    }
+
+    return finalArray;
+  }
 }
 
 class BSTNode {
@@ -103,4 +124,4 @@ bst.add(4);
 bst.add(7);
 bst.add(13);
 
-// console.log("breadth first traversal: ", bst.breadthFirstTraversal([], []));
+console.log("breadth first traversal: ", bst.breadthFirstTraversal());
